@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nur Shafhiqah Najwa - Portfolio</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="Portfolio of Nur Shafhiqah Najwa – Web Developer and Designer.">
+  <meta name="keywords" content="Web Developer, Graphic Designer, Portfolio, UI/UX, PHP, HTML, CSS, JavaScript">
+  <meta name="author" content="Nur Shafhiqah Najwa">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      font-size: clamp(14px, 2vw, 18px);
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5vw;
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+    header:hover { background-color: #f1f1f1; }
+    .logo {
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      font-size: clamp(14px, 2vw, 16px);
+      transition: transform 0.2s ease, color 0.3s ease;
+    }
+    nav a:hover,
+    .logo:hover,
+    button:hover,
+    .card:hover,
+    img:hover {
+      transform: scale(0.98);
+      color: #1a5ed8;
+    }
+    nav a.active {
+      color: #1a5ed8;
+      font-weight: 700;
+      border-bottom: 2px solid #1a5ed8;
+    }
+    section {
+      display: none;
+      padding: 40px 5vw;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+      animation: fadeIn 1.2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1, h2, h3 {
+      font-size: clamp(20px, 4vw, 32px);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    p, li { font-size: clamp(14px, 2vw, 18px); color: #555; }
+    .card {
+      background: #fff;
+      padding: 30px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15); }
+    .full-width {
+      width: 100%;
+      height: 30vh;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #6a11cb, #2575fc);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .full-width:hover { transform: scale(1.02); }
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #eee;
+      font-size: clamp(12px, 1.5vw, 14px);
+      color: #777;
+      margin-top: 40px;
+      background-color: #f1f1f1;
+      transition: background-color 0.3s ease;
+    }
+    .footer:hover { background-color: #e5e5e5; }
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover { background: #1a5ed8; transform: scale(1.05); }
+    .icons img { width: 50px; margin: 10px; }
+	
+	
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo" onclick="showSection('home')" aria-label="Home">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="black" height="28" viewBox="0 0 24 24" width="28">
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+  </svg>
+</a>
+
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+	  <a href="#" onclick="showSection('education')">Education</a>
+      <a href="#" onclick="showSection('skills')">Skills</a>
+      <a href="#" onclick="showSection('projects')">Projects</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="active">
+    <div class="full-width">
+      <h1>Welcome to My Portfolio</h1>
+    </div>
+    <div class="card">
+      <h3>About Me</h3>
+<div class="card" style="text-align: justify; padding: 30px; line-height: 1.8;">
+  <p style="margin-bottom: 20px;">
+    I’m <strong>Nur Shafhiqah Najwa Othman</strong>, a frontend and backend developer with a strong foundation in full-stack development and production-ready UI implementation. My current focus is building scalable, maintainable web systems using core technologies like <strong>HTML, CSS, JavaScript (Vanilla & DOM-based), PHP, MySQL, and Java</strong>.
+  </p>
+
+  <p style="margin-bottom: 20px;">
+    I am currently pursuing a <strong>Diploma in Computer Science</strong> at <strong>Universiti Teknologi MARA (UiTM)</strong>, where I’ve led and contributed to multiple end-to-end web-based projects. I handle full project lifecycles from database schema design, authentication and session logic, backend development, to UI/UX integration and responsive frontend deployment following best practices in versioning and modular development.
+  </p>
+
+  <p style="margin-bottom: 20px;">
+    My workflow includes <strong>Git</strong> for version control, <strong>WordPress</strong> for CMS-based projects, and <strong>Figma</strong> for interface prototyping and wireframing. For creative design and UI assets, I use <strong>Adobe Illustrator</strong>, <strong>Photoshop</strong>, and <strong>Canva</strong> to deliver consistent branding and user-focused visuals across platforms.
+  </p>
+
+  <p style="margin-bottom: 20px;">
+    I’ve also completed several industry-recognized certifications to support my technical growth in cloud, AI, and data systems, including:
+    <br>
+    • <strong>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate – Oracle</strong><br>
+    • <strong>Introduction to Internet of Things – Cisco Networking Academy</strong><br>
+    • <strong>AI Fundamentals – Cisco Networking Academy</strong><br>
+    • <strong>SQL Expert – MongoDB University</strong><br>
+    • <strong>Data Science Using R – HRD Corp Certified</strong><br>
+    • <strong>Data Security with Microsoft Azure – HRD Corp Certified</strong>
+  </p>
+
+  <p>
+    My current technical scope includes <strong>RESTful API architecture</strong>, <strong>session management</strong>, <strong>responsive UI frameworks</strong>, and <strong>system integration</strong> across static and dynamic environments. I continue to expand my skills in backend logic, cloud service integration, infrastructure scalability, and performance tuning, always prioritizing clean, secure, and efficient deployment for production-ready applications.
+  </p>
+</div>
+
+
+
+ </div>
+  </section>
+
+ <section id="skills">
+  <h2>Skills</h2>
+
+  <div class="card">
+    <h3>Programming & Development</h3>
+    <ul style="padding-left: 20px; list-style: disc;">
+      <li><strong>HTML5 & CSS3:</strong> Expert in semantic markup, responsive design with Flexbox/Grid, animation using keyframes and transitions.</li>
+      <li><strong>JavaScript (ES6+):</strong> DOM manipulation, form validation, modular scripts, and dynamic content rendering.</li>
+      <li><strong>PHP & MySQL:</strong> Backend logic, session handling, secure login systems, and database CRUD operations.</li>
+      <li><strong>Java & C++:</strong> OOP concepts, basic algorithms, and data structures for academic and problem-solving tasks.</li>
+      <li><strong>R:</strong> Used for statistical modeling and data analysis in data science certification projects.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Tools, Frameworks & Platforms</h3>
+    <ul style="padding-left: 20px; list-style: disc;">
+      <li><strong>WordPress:</strong> Custom themes, plugins setup, visual editing using Elementor, blogging systems.</li>
+      <li><strong>Visual Studio Code:</strong> Main code editor with Git integration, extensions for HTML/PHP/JS linting.</li>
+      <li><strong>Figma:</strong> Wireframes, user flows, and high-fidelity mockups for UI/UX planning.</li>
+      <li><strong>Git:</strong> Version control, commits, branching, and GitHub collaboration.</li>
+      <li><strong>Adobe Dreamweaver:</strong> Used for HTML and CSS-based layouting and design prototyping.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Design & Multimedia</h3>
+    <ul style="padding-left: 20px; list-style: disc;">
+      <li><strong>Adobe Illustrator:</strong> Logo design, vector illustrations, and UI components.</li>
+      <li><strong>Adobe Photoshop:</strong> Photo manipulation, banners, and social media assets.</li>
+      <li><strong>Canva:</strong> Marketing visuals, presentations, and fast prototyping for freelance projects.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Data & Analytics</h3>
+    <ul style="padding-left: 20px; list-style: disc;">
+      <li><strong>SQL:</strong> Querying, joins, grouping, and optimization (MongoDB SQL Expert Certified).</li>
+      <li><strong>R Language:</strong> Data cleaning, visualization (ggplot2), modeling, and analytics reporting.</li>
+      <li><strong>Microsoft Excel:</strong> Functions, pivot tables, and charts for data reports and summaries.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Web & Cloud Fundamentals</h3>
+    <ul style="padding-left: 20px; list-style: disc;">
+      <li><strong>REST APIs:</strong> Integration in PHP/JS, data retrieval, and display in frontend apps.</li>
+      <li><strong>Cloud Concepts:</strong> Oracle AI Cloud Foundations and Azure security certified – understanding of cloud deployment, machine learning basics, and AI service lifecycle.</li>
+      <li><strong>IoT Concepts:</strong> Smart device communication, edge computing (Cisco IoT Certified).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3> Skill Levels</h3>
+    <div style="margin-bottom: 20px;">
+      <p><strong>HTML/CSS</strong></p>
+      <div style="background: #eee; border-radius: 10px;"><div style="width: 95%; background: #2575fc; color: white; padding: 5px 10px; border-radius: 10px;">Expert</div></div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p><strong>JavaScript</strong></p>
+      <div style="background: #eee; border-radius: 10px;"><div style="width: 80%; background: #2575fc; color: white; padding: 5px 10px; border-radius: 10px;">Advanced</div></div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p><strong>PHP/MySQL</strong></p>
+      <div style="background: #eee; border-radius: 10px;"><div style="width: 80%; background: #2575fc; color: white; padding: 5px 10px; border-radius: 10px;">Advanced</div></div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p><strong>Figma/Design Tools</strong></p>
+      <div style="background: #eee; border-radius: 10px;"><div style="width: 95%; background: #2575fc; color: white; padding: 5px 10px; border-radius: 10px;">Expert</div></div>
+    </div>
+  </div>
+
+  <div class="card icons">
+    <h3> Tools I Use Frequently</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git icon">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma icon">
+    </div>
+  </div>
+</section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Smart Building Energy Management System</h3>
+      <p>Web system for monitoring building energy usage, with user/admin login, real-time analytics, and dashboard.</p>
+      <div class="icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+      </div>
+    </div>
+    <div class="card">
+      <h3>Mental Health Check-In Web App</h3>
+      <p>Private platform to track moods, log entries, and visualize mental well-being.</p>
+      <div class="icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+      </div>
+    </div>
+    <div class="card">
+      <h3>Freelance Design & Web Projects</h3>
+      <p>Created logos, posters, and blog sites using visual and design tools:</p>
+      <div class="icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator">
+      </div>
+    </div>
+  </section>
+
+<section id="education">
+  <h2>Education & Certifications</h2>
+
+  <div class="card">
+<div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+  <img src="./img/uitmlogo2.PNG" alt="UiTM Logo" style="height: 70px; border-radius: 0px;">
+  <div>
+    <h3 style="margin: 0; font-size: 1.2rem;">Diploma in Computer Science</h3>
+    <p style="margin: 4px 0 0 0; font-size: 1rem; line-height: 1.4;">
+      <strong>Universiti Teknologi MARA (UiTM)</strong><br>
+      Sep 2023 – Feb 2026
+    </p>
+  </div>
+</div>
+
+<ul style="padding-left: 20px; list-style: disc;">
+  <li>Major coursework in data structures, systems design, and networking.</li>
+  <li>Completed real-world software development group projects.</li>
+</ul>
+  </div>
+
+ <!-- Certificates Section -->
+<div class="card">
+  <h3>Oracle Cloud Infrastructure 2025 – AI Foundations</h3>
+  <p><strong>Issued at:</strong> June 2025 – Present</p>
+  <img src="./img/oracle-cert.PNG" alt="Oracle Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Introduced to machine learning principles, AI lifecycle, and foundational knowledge of cloud-based AI services.</p>
+</div>
+
+<div class="card">
+  <h3>Introduction to Internet of Things – Cisco Networking Academy</h3>
+  <p><strong>Issued at:</strong> June 2025 – Present</p>
+  <img src="img/iot-cert.PNG" alt="Cisco IoT Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Covered core IoT concepts including smart device communication, edge computing, and connected system security.</p>
+</div>
+
+<div class="card">
+  <h3>AI Fundamentals – Cisco Networking Academy</h3>
+  <p><strong>Issued at:</strong> May 2025 – Present</p>
+  <img src="img/modernai-cert.PNG" alt="Cisco AI Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Learned about basic AI theory, applications, ethics, and tools used in today’s AI development.</p>
+</div>
+
+<div class="card">
+  <h3>SQL for Data Analytics – MongoDB University</h3>
+  <p><strong>Issued at:</strong>June 2025 - Present</p>
+  <img src="img/mongodb-cert.PNG" alt="MongoDB SQL Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Focused on querying databases using advanced SQL techniques including joins, aggregations, and performance tuning.</p>
+</div>
+
+<div class="card">
+  <h3>Data Science Using R – HRD Corp Certified</h3>
+  <p><strong>Issued at:</strong> February 2024 – Present</p>
+  <img src="img/datascience-cert.PNG" alt="Data Science R Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Built statistical models, created data visualizations, and applied R in real-world analytics problems.</p>
+</div>
+
+<div class="card">
+  <h3>Data Security with Microsoft Azure – HRD Corp Certified</h3>
+  <p><strong>Issued at:</strong> February 2024 – Present</p>
+  <img src="img/azure-cert.PNG" alt="Azure Security Certificate" style="width: 100%; height: 600px; border-radius: 10px; object-fit: contain;">
+  <p>Learned to secure applications and services deployed on Microsoft Azure, with focus on authentication, firewalls, and data encryption.</p>
+</div>
+</section>
+
+
+
+<section id="contact" style="padding: 60px 20px; background-color: #ffffff;">
+  <h2 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 600;">Contact</h2>
+
+  <p style="margin-bottom: 1.5rem; font-size: 1rem; line-height: 1.6;">
+    <strong>Location:</strong> Ipoh, Perak, Malaysia<br>
+    <strong>Internship Availability:</strong> Open for internship (Sept 2025 – Sept 2026)<br>
+    <strong>Note:</strong> Open to relocation or remote work opportunities
+  </p>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; font-size: 1rem;">
+    <p>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="18" style="vertical-align: middle; filter: grayscale(100%); margin-right: 8px;">
+      <strong>Email:</strong> <a href="mailto:najwashafhiqah@gmail.com">najwashafhiqah@gmail.com</a>
+    </p>
+    <p>
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" width="18" style="vertical-align: middle; filter: grayscale(100%); margin-right: 8px;">
+      <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shafhiqah" target="_blank">linkedin.com/in/shafhiqah</a>
+    </p>
+    <p>
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" width="18" style="vertical-align: middle; filter: grayscale(100%); margin-right: 8px;">
+      <strong>GitHub:</strong> <a href="https://github.com/shafnajwa" target="_blank">github.com/shafnajwa</a>
+    </p>
+  </div>
+
+  <div style="margin-top: 2rem; border-radius: 12px; overflow: hidden;">
+    <iframe 
+      src="https://www.google.com/maps?q=Ipoh,+Perak,+Malaysia&output=embed"
+      width="100%" 
+      height="300" 
+      style="border: 0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+
+  <div class="footer">
+    <p>&copy; 2025 Nur Shafhiqah Najwa. All rights reserved.</p>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+      const target = document.getElementById(id);
+      const navLink = [...document.querySelectorAll('nav a')].find(a => a.textContent.toLowerCase().includes(id));
+      if (target) {
+        setTimeout(() => target.classList.add('active'), 50);
+        if (navLink) navLink.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
+
